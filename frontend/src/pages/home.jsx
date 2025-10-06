@@ -26,7 +26,7 @@ function HomeComponent () {
             <div className='navBar'>
                 <div style={{display:"flex", alignItems:"center", cursor:"pointer"}} onClick={()=>{
                     navigate("/")
-                }}>
+                }} className='navHeading'>
                     <h2>Video Call</h2>
                 </div>
 
@@ -43,7 +43,7 @@ function HomeComponent () {
                     <Button onClick={() => {
                         localStorage.removeItem("token")
                         navigate("/auth")
-                    }} style={{marginLeft:"1rem"}}>
+                    }} style={{marginLeft:"1rem", color:"#6c63ff"}}>
                         Logout
                     </Button>
                 </div>
@@ -59,7 +59,7 @@ function HomeComponent () {
 
                             <TextField onChange={e => setMeetingCode(e.target.value)}   id="outlined-basic" label="Meeting Code"variant="outlined" />
 
-                            <Button onClick={handleJoinVideoCall} variant='contained'>Join</Button>
+                            <Button onClick={handleJoinVideoCall} variant='contained' style={{backgroundColor:"#6c63ff"}}>Join</Button>
                         </div>
                     </div>
                 </div>

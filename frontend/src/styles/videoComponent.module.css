@@ -1,9 +1,7 @@
 .meetVideoContainer {
   position: relative;
   height: 100vh;
-  background: url("/public/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #6C63FF;
 }
 
 .meetUserVideo {
@@ -64,9 +62,14 @@
 .chattingArea {
   display: flex;
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
+  gap: 0.3rem;
 }
 
 .sendBtn {
   padding: 1rem;
+  background-color: #6C63FF;
 }
+
+
+

@@ -17,8 +17,6 @@ import { Snackbar } from '@mui/material';
 
 
 
-// TODO remove, this demo shouldn't need to reset the theme.
-
 const defaultTheme = createTheme();
 
 export default function Authentication() {
@@ -80,12 +78,12 @@ export default function Authentication() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }} style={{marginBottom:"1.5rem"}}>
               <LockOutlinedIcon />
             </Avatar>
             
             <div>
-                <Button variant={formState === 0 ? "contained" : ""} onClick={()=> {setFormState(0)}}>
+                <Button variant={formState === 0 ? "contained" : ""} onClick={()=> {setFormState(0)}} >
                     Sign In
                 </Button>
                 <Button variant={formState === 1 ? "contained" : ""} onClick={()=> {setFormState(1)}}>

@@ -14,6 +14,7 @@ import StopScreenShareIcon from '@mui/icons-material/StopScreenShare';
 import ChatIcon from '@mui/icons-material/Chat';
 import { useNavigate } from 'react-router-dom';
 import server from "../environment";
+import "../App.css";
 
 
 const server_url = server;
@@ -435,21 +436,21 @@ export default function VideoMeetComponent(){
     }
 
     return (
-        <div>
+        <div className='videoMeetComponent'>
             
             {askForUsername === true ? 
-                <div style={{paddingLeft:"25rem"}}>
+                <div style={{textAlign:"center"}}>
 
        
-                    <h2 style={{padding:"1rem", paddingLeft:"10rem"}}>Enter into Lobby</h2>
+                    <h2 style={{padding:"2rem"}}>Enter Your Meeting Space</h2>
 
-                    <TextField id="outlined-basic" label="Username" value={username} onChange={e => setUsername(e.target.value)} variant="outlined"  style={{ marginLeft:"5rem"}}/>
+                    <TextField id="outlined-basic" label="Username" value={username} onChange={e => setUsername(e.target.value)} variant="outlined"  style={{ borderRadius: "7rem"}}/>
                     
-                    <Button variant="contained" onClick={connect}  style={{marginLeft:"1rem", paddingBlock:"0.9rem"}}>Connect</Button>
+                    <Button variant="contained" onClick={connect}  style={{marginLeft:"1rem", paddingBlock:"0.9rem", backgroundColor:"#6C63FF"}}>Connect</Button>
                     
 
                     <div>
-                        <video ref={localVideoRef} autoPlay muted style={{borderRadius:"20px", width:"50%", marginTop:"2rem"}}></video>
+                        <video ref={localVideoRef} autoPlay muted style={{borderRadius:"20px", width:"40%", marginTop:"2rem", boxShadow:"2px 4px 8px #211d74b7"}} className='yourVideo'></video>
                     </div>
 
                 </div> : 
@@ -475,7 +476,7 @@ export default function VideoMeetComponent(){
 
                                 <div className={styles.chattingArea}>
                                     {/* {message} */}
-                                     <TextField value={message} onChange={e => setMessage(e.target.value)} id="outlined-basic" label="Write here..." variant="outlined"/>
+                                     <TextField value={message} onChange={e => setMessage(e.target.value)} id="outlined-basic" label="Write here..." variant="outlined" style={{width:"19rem"}}/>
 
                                      <Button variant='contained' onClick={sendMessage} className={styles.sendBtn}>Send</Button>
                                 </div>
