@@ -21,6 +21,8 @@ app.use(express.urlencoded({limit: "40kb", extended:true}));
 
 app.use("/api/v1/users", userRoutes);
 
+app.get("/", (req, res) => { res.send("Server is running!"); });
+
 const start = async () => {
     app.set("mongo_user")
     const connectionDb = await mongoose.connect("mongodb+srv://SaloniVedioCall:SaloniVedioCall124@videocallcluster.lead6bg.mongodb.net/");
