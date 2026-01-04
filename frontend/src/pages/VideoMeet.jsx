@@ -517,7 +517,7 @@ export default function VideoMeetComponent(){
 
                     </div>
 
-                    <video className={styles.meetUserVideo} ref={localVideoRef} autoPlay muted></video>
+                    <video className={styles.meetUserVideo} ref={localVideoRef} autoPlay muted ></video>
                     
                     <div className={styles.conferenceView} style={{display:"flex"}}>
                     {videos.map((video) => (
@@ -542,4 +542,3 @@ export default function VideoMeetComponent(){
         </div>
     );
 }
-
