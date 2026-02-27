@@ -1,5 +1,6 @@
 import express from "express";
 import { createServer } from "node:http";
+import dotenv from "dotenv";
 
 import { Server } from "socket.io";
 
@@ -10,6 +11,8 @@ import cors from "cors";
 import userRoutes from "./routes/users.routes.js";
 
 const app = express();
+dotenv.config({});
+
 const server = createServer(app);
 const io = connectToSocket(server);
 
@@ -25,7 +28,7 @@ app.get("/", (req, res) => { res.send("Server is running!"); });
 
 const start = async () => {
     app.set("mongo_user")
-    const connectionDb = await mongoose.connect("mongodb+srv://SaloniVedioCall:SaloniVedioCall124@videocallcluster.lead6bg.mongodb.net/");
+    const connectionDb = await mongoose.connect(process.env.MONGO_URI);
 
     console.log(`MONGO Connected DB Host: ${connectionDb.connection.host}`);
         server.listen(app.get("port"), () => {
