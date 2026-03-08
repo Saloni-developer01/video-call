@@ -41,9 +41,65 @@ You can experience the **Video Call App** live here:
 
 [Experience the Video Call App live! ✮⋆˙](https://video-call-frontend-m89l.onrender.com/)
 
+
 ---
 
-## ⚙️ Repository Structure
+## 🐳 Docker Hub Images
+Project images are publicly available on Docker Hub for quick deployment:
+* **Backend Image:** `saloniyadav29/zoomclone-backend:v1`
+* **Frontend Image:** `saloniyadav29/zoomclone-frontend:v1`
 
-* `backend/`: Contains Node.js/Express server and MongoDB connection logic.
-* `frontend/`: Contains the React application, components, and UI logic.
+---
+
+
+## ⚙️ Installation and Setup Guide
+
+### 1. Prerequisites
+
+* Node.js (v18+)
+* Docker Desktop (If running via Docker)
+* MongoDB Instance (Local or MongoDB Atlas)
+
+### 2. Clone the Repository
+
+```bash
+    git clone https://github.com/Saloni-developer01/video-call.git
+    cd video-call
+```
+
+### 3. Setup Environment Variables
+
+Create a .env file in the root directory (for Docker) or inside backend/ (for manual setup) with the following:
+
+```bash
+    PORT=8000
+    MONGO_URI=your_mongodb_connection_string
+```
+
+### 4. Choose Your Run Mode
+
+### Option A: Run with Docker (Recommended)
+
+```bash
+    docker-compose up --build
+```
+
+App will be live at: http://localhost:3000
+
+### Option B: Manual Setup
+
+#### 📁 Backend Setup :
+
+```bash
+    cd backend
+    npm install
+    npm run dev
+```
+
+#### 💻 Frontend Setup :
+
+```bash
+    cd frontend
+    npm install
+    npm start
+```
